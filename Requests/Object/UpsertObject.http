@@ -1,0 +1,13 @@
+@id=00000000-0000-0000-0000-000000000000
+
+PUT http://localhost:5279/objects/{{id}}
+Content-Type: application/json
+
+{
+    "name": "Alberto Jose Marrugo",
+    "description": "IT / Developer",
+    "startDateTime": "2023-04-11T08:00:00",
+    "endDateTime": "2023-04-11T08:00:00",
+    "tags": ["C", "C#", "Python"],
+    "labels": [".NET", "Flask", "Pandas"]
+}
