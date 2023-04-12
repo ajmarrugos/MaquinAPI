@@ -1,4 +1,4 @@
-﻿namespace MaquinOM.UpsertObjectRequest;
+﻿namespace MaquinOM.Object;
 
 // UPSERT REQUEST Model
 public record UpsertObjectRequest

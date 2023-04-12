@@ -1,7 +1,7 @@
-﻿namespace MaquinOM.ObjectRequest;
+﻿namespace MaquinOM.Object;
 
 // REQUEST Model
-public record ObjectRequest
+public record CreateObjectRequest
 (
     string Name,
     string Description,

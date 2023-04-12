@@ -1,4 +1,4 @@
-﻿namespace MaquinOM.ObjectResponse;
+﻿namespace MaquinOM.Object;
 
 // RESPONSE Model
 public record ObjectResponse
