@@ -2,6 +2,17 @@
 
 A small CRUD REST API project demo, engineered in C# with .NET.
 
+### HOW TO TRY IT?
+
+Download the Project
+github clone https://github.com/ajmarrugos/MaquinAPI
+
+Build the Project
+dotnet build
+
+Run the project
+dotnet run .\MaquinAPI\
+
 ### API REQUEST METHODS
 
 | Api Functions     | Request Method          | Successful Response                | Unsuccessful Response      | Details                             |
