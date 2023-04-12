@@ -1,0 +1,11 @@
+POST http://localhost:5279/objects
+Content-Type: application/json
+
+{
+    "name": "Alberto Marrugo",
+    "description": "IT Developer",
+    "startDateTime": "2023-04-11T08:00:00",
+    "endDateTime": "2023-04-11T08:00:00",
+    "tags": ["C", "C#", "Python"],
+    "labels": [".NET", "Flask", "Pandas"]
+}
