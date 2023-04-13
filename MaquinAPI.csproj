@@ -1,13 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <ItemGroup>
-    <ProjectReference Include="..\MaquinOM\MaquinOM.csproj" />
-  </ItemGroup>
-
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
 
 </Project>
