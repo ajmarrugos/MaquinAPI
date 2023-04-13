@@ -19,7 +19,7 @@ public class Object
         string name,
         string description,
         DateTime startDateTime,
-        DateTime endDateTime
+        DateTime endDateTime,
         DateTime lastModifiedDateTime,
         List<string> tags,
         List<string> labels)
@@ -35,5 +35,3 @@ public class Object
         Labels = labels;
     }
 }
-
-
