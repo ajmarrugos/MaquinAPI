@@ -1,13 +1,20 @@
 using MaquinOM.User;
+using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaquinAPI.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class UserController : ControllerBase
+public class UsersController : ControllerBase
 {
-    [HttpPost()]
+    private readonly IUserService _userService;
+    public UsersController(IUserService userService)
+    {
+        _userService = userService;
+    }
+
+    [HttpPost]
     public IActionResult CreateUser(CreateUserRequest request)
     {
         // Map the data get from the request to an C# User
@@ -38,7 +45,11 @@ public class UserController : ControllerBase
 
 
     [HttpGet("{id:guid}")]
-    public IActionResult GetUser(Guid id) => Ok(id);
+    public IActionResult GetUser(Guid id)
+    {
+        User user = _userService.GetUser(id);
+        return Ok(id);
+    }
 
     [HttpPut("{id:guid}")]
     public IActionResult UpsertUser(Guid id, UpsertUserRequest request) => Ok(request);
