@@ -1,4 +1,3 @@
-﻿using MaquinAPI;
 using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
@@ -70,12 +69,6 @@ namespace MaquinAPI.Controllers
                 }
             }
         };
-
-        [HttpGet] // GET: All api/Users
-        public async Task<ActionResult<List<User>>> Get()
-        {
-            return Ok(users);
-        }
 
         [HttpGet("{id}")] // GET: Single api/User/
         public async Task<ActionResult<User>> Get(int id)
