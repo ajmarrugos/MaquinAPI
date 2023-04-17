@@ -1,8 +1,14 @@
+using MaquinAPI.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient("jsonplaceholder", c =>
+{
+    c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
+});
+builder.Services.AddScoped<ApiService>();
 
 var app = builder.Build();
 
