@@ -1,16 +1,16 @@
 ﻿using MaquinAPI;
-using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Numerics;
 
 namespace MaquinAPI.Controllers
 {
     // API CONTROLLER
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class UsersController : ControllerBase
     {
         // Simulated Users template
-        private static List<Models.User> users = new List<User>
+        private static List<User> users = new List<User>
         {
             new User
             {
