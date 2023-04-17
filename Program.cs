@@ -1,28 +1,22 @@
 using MaquinAPI.Services;
-using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c =>
+builder.Services.AddSwaggerGen();
+builder.Services.AddHttpClient("jsonplaceholder", c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API", Version = "v1" });
+    c.BaseAddress = new Uri("https://jsonplaceholder.typicode.com/");
 });
-
-
-builder.Services.AddHttpClient();
-builder.Services.AddScoped<ExternalApiService>();
+builder.Services.AddScoped<ApiService>();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API v1");
-    });
+    app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
