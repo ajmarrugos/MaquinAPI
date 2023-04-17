@@ -1,12 +1,14 @@
 ﻿using MaquinAPI;
+using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
 
 namespace MaquinAPI.Controllers
 {
-    // API CONTROLLER
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+
+    // LOCAL API: UsersController
     public class UsersController : ControllerBase
     {
         // Simulated Users template
@@ -69,15 +71,13 @@ namespace MaquinAPI.Controllers
             }
         };
 
-        // GET: All api/Users
-        [HttpGet]
+        [HttpGet] // GET: All api/Users
         public async Task<ActionResult<List<User>>> Get()
         {
             return Ok(users);
         }
 
-        // GET: Single api/User/
-        [HttpGet("{id}")]
+        [HttpGet("{id}")] // GET: Single api/User/
         public async Task<ActionResult<User>> Get(int id)
         {
             var user = users.Find(u => u.Id == id);
@@ -88,16 +88,14 @@ namespace MaquinAPI.Controllers
             return Ok(user);
         }
 
-        // POST: in api/Users/
-        [HttpPost]
+        [HttpPost] // POST: in api/Users/
         public async Task<ActionResult<List<User>>> AddUser(User user)
         {
             users.Add(user);
             return Ok(users);
         }
 
-        // PUT: in api/Users/
-        [HttpPut]
+        [HttpPut] // PUT: in api/Users/
         public async Task<ActionResult<List<User>>> UpdateUser(User request)
         {
             var user = users.Find(u => u.Id == request.Id);
@@ -127,8 +125,7 @@ namespace MaquinAPI.Controllers
             return Ok(users);
         }
 
-        // DELETE: from api/Users/
-        [HttpDelete("{id}")]
+        [HttpDelete("{id}")] // DELETE: from api/Users/
         public async Task<ActionResult<List<User>>> DeleteUser(int id)
         {
             var user = users.Find(u => u.Id == id);
