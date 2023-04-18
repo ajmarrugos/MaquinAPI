@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MaquinAPI</name>
+    </assembly>
+    <members>
+        <member name="M:MaquinAPI.Controllers.Ext_UsersController.GetAll">
+            <summary>
+            Gets all Users
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MaquinAPI.Controllers.Ext_UsersController.GetById(System.Int32)">
+            <summary>
+            Gets a single User by ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MaquinAPI.Controllers.Ext_UsersController.Create(MaquinAPI.Models.User)">
+            <summary>
+            Creates a new User
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MaquinAPI.Controllers.Ext_UsersController.Update(System.Int32,MaquinAPI.Models.User)">
+            <summary>
+            Updates a User by a given ID
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:MaquinAPI.Controllers.Ext_UsersController.Delete(System.Int32)">
+            <summary>
+            Removes a User by a given ID
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

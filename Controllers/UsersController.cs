@@ -1,11 +1,10 @@
 using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Numerics;
 
 namespace MaquinAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("MaquinAPI/[controller]")]
 
     // LOCAL API: UsersController
     public class UsersController : ControllerBase
@@ -70,8 +69,14 @@ namespace MaquinAPI.Controllers
             }
         };
 
+        [HttpGet] // GET: All api/Users
+        public async Task<ActionResult<List<User>>> GetAll()
+        {
+            return Ok(users);
+        }
+
         [HttpGet("{id}")] // GET: Single api/User/
-        public async Task<ActionResult<User>> Get(int id)
+        public async Task<ActionResult<User>> GetById(int id)
         {
             var user = users.Find(u => u.Id == id);
             if (user == null)
