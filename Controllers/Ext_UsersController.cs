@@ -5,7 +5,7 @@ using System.Numerics;
 namespace MaquinAPI.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("JSONPlaceholder/users/")]
 
     // API CLIENT: UsersController
     public class Ext_UsersController : ControllerBase
@@ -17,7 +17,11 @@ namespace MaquinAPI.Controllers
             _client = httpClientFactory.CreateClient("jsonplaceholder");
         }
 
-        [HttpGet] // GET: All api/Users
+        /// <summary>
+        /// Gets all Users
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             try
@@ -33,8 +37,12 @@ namespace MaquinAPI.Controllers
             }
         }
 
-        [HttpGet("{id}")] // GET: Single api/User/
-        public async Task<IActionResult> Get(int id)
+        /// <summary>
+        /// Gets a single User by ID
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
             try
             {
@@ -49,7 +57,11 @@ namespace MaquinAPI.Controllers
             }
         }
 
-        [HttpPost] // POST: in api/Users/
+        /// <summary>
+        /// Creates a new User
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
         public async Task<IActionResult> Create([FromBody] User user)
         {
             try
@@ -57,7 +69,7 @@ namespace MaquinAPI.Controllers
                 var response = await _client.PostAsJsonAsync("users", user);
                 response.EnsureSuccessStatusCode();
                 var createdUser = await response.Content.ReadAsAsync<User>();
-                return CreatedAtAction(nameof(Get), new { id = createdUser.Id }, createdUser);
+                return CreatedAtAction(nameof(GetById), new { id = createdUser.Id }, createdUser);
             }
             catch (HttpRequestException)
             {
@@ -65,7 +77,11 @@ namespace MaquinAPI.Controllers
             }
         }
 
-        [HttpPut("{id}")] // PUT: in api/Users/
+        /// <summary>
+        /// Updates a User by a given ID
+        /// </summary>
+        /// <returns></returns>
+        [HttpPut("{id}")]
         public async Task<IActionResult> Update(int id, [FromBody] User user)
         {
             try
@@ -81,7 +97,11 @@ namespace MaquinAPI.Controllers
             }
         }
 
-        [HttpDelete("{id}")] // DELETE: from api/Users/
+        /// <summary>
+        /// Removes a User by a given ID
+        /// </summary>
+        /// <returns></returns>
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
