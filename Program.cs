@@ -1,5 +1,10 @@
 using MaquinAPI.Services;
+using System.Reflection;
 
+internal class Program
+{
+    private static void Main(string[] args)
+    {
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
@@ -23,3 +28,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
+    }
+}
