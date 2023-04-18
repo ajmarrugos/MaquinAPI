@@ -1,4 +1,4 @@
-﻿using MaquinAPI.Models;
+using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MaquinAPI.Controllers

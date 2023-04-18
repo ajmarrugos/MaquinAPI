@@ -1,4 +1,4 @@
-﻿using MaquinAPI.Models;
+using MaquinAPI.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Numerics;
 
@@ -77,6 +77,7 @@ namespace MaquinAPI.Controllers
             }
         }
 
+
         /// <summary>
         /// Updates a User by a given ID
         /// </summary>
@@ -96,6 +97,7 @@ namespace MaquinAPI.Controllers
                 return StatusCode(500);
             }
         }
+
 
         /// <summary>
         /// Removes a User by a given ID

@@ -1,9 +1,7 @@
-using System.ComponentModel.DataAnnotations;
-namespace MaquinAPI.Models
+namespace MaquinAPI
 {
     public class User
     {
-        [Required]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Username { get; set; }
@@ -35,4 +33,5 @@ namespace MaquinAPI.Models
         public string CatchPhrase { get; set; }
         public string Bs { get; set; }
     }
+
 }
